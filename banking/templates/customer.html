@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Profile</title>
+    <link rel="stylesheet" href="{% static 'customer.css' %}">
+</head>
+<body>
+{% if cus_tomer %}
+    <div class="App">
+        <div class="Header">
+          <img src="{% static 'logobanner.png' %}" alt="Logo" class="Logo">
+          <div class="UserInfo">
+            <div class="username">
+              <img src="{% static 'acc.png' %}" alt="acc" class="icon"/>
+              <a href="customer.html">{{ cus_tomer.cust_name }}</a>
+            </div>
+            <div class="logoutopt">
+              <img src="{% static 'logout.png' %}" alt="logout" class="icon"/>
+              <a href="login.html">Log out</a>
+            </div>
+          </div>
+        </div>
+        <h2>Account PROFILE</h2>
+        <div class="sec1">
+        <table class="AccountInfo">
+          <tr>
+            <td>
+              <p class="col1">CUSTOMER ID</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.cust_id }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">ACCOUNT HOLDER</p>
+            </td>
+            <td style="font-size: 25px; text-transform: uppercase;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.cust_name }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">CNIC</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.CNIC }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">ADDRESS</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.address }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">CONTACT</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.contact }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">EMAIL</p>
+            </td>
+            <td style="font-size: 25px; font-style: italic;text-transform:uppercase;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.email }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">BIRTH DATE</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ cus_tomer.birth_date }}</p>
+            </td>
+          </tr>
+        </table>
+        <div class="line">
+            <h2> </h2>
+        </div>
+        <div class="innersec">
+            <ul>
+                <li>
+                    <h3>Transactions Record</h3>
+                    <form action="{% url 'bms:transaction_record' %}" method="GET">
+                        <input type="hidden" name="cust_id" value="{{ customer.cust_id }}">
+                        <button type="submit" id="checkButton">Check now</button>
+                    </form>
+                </li>
+                <li>
+                    <h3>Loan Application</h3>
+                    <form action="{% url 'bms:loan_application' %}" method="GET">
+                        <input type="hidden" name="cust_id" value="{{ customer.cust_id }}">
+                        <button id="applyButton">Apply now</button>
+                    </form>
+                </li>
+                <li>
+                    <h3>Support Us</h3>
+                    <form action="{% url 'bms:feedback' %}" method="GET">
+                        <input type="hidden" name="cust_id" value="{{ customer.cust_id }}">
+                        <button id="submitButton">Submit Feedback</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+{% else %}
+{% endif %}
+</body>
+</html>

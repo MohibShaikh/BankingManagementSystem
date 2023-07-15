@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Records</title>
+    <link rel="stylesheet" href="{% static 'transactions.css' %}">
+</head>
+<body>
+    <div class="Header">
+        <img src="{% static 'logobanner.png' %}" alt="Logo" class="Logo">
+        <div class="UserInfo">
+            <div class="username">
+                <img src="{% static 'acc.png' %}" alt="acc" class="icon"/>
+                <p>{{ customer.cust_name }}</p>
+            </div>
+            <div class="logoutopt">
+                <img src="{% static 'logout.png' %}" alt="logout" class="icon"/>
+                <a href="login.html">Log out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="App">
+        <h2>Transaction Records</h2>
+
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Recipient</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.transac_type }}</td>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.emp_id.staff.staff_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

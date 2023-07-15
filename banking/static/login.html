@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="App">
+    {% csrf_token %}
+    <img src="loginnew__2_-removebg-preview.png" alt="loginimg"/>
+    <form id="loginForm" action="" method="post">
+
+      <fieldset>
+        <h2>LOGIN FORM</h2>
+        <div class="Field">
+          <select id="roleSelect">
+            <option value="role" name="role" disabled selected="true">Role</option>
+            <option value="customer" name="customer">Customer</option>
+            <option value="manager" name="manager">Manager</option>
+            <option value="employee" name="employee">Employee</option>
+          </select>
+        </div>
+        <div class="Field">
+          <label>Email address <sup>*</sup></label>
+          <input name="email" id="emailInput" type="text" placeholder="Email address" style="background-image: url(./email.png);background-position-x: 5px;background-size: 25px;background-position-y: center;background-repeat: no-repeat;padding-left: 40px;"/>
+          <p id="emailError" class="FieldError"></p>
+        </div>
+        <div class="Field">
+          <label>Password <sup>*</sup></label>
+          <input name="password" id="passwordInput" type="password" placeholder="Password" style="background-image: url(./pw.png);background-position-x: 5px;background-size: 25px;background-position-y: center;background-repeat: no-repeat;padding-left: 40px;" />
+          <p id="passwordError" class="FieldError"></p>
+        </div>
+
+        <button name="submit" id="submitBtn" type="submit">Login</button>
+        <hr>
+<!--        <p>-->
+<!--          Don't have an account?-->
+<!--          <a href="index.html">SIGN UP</a>-->
+<!--        </p>-->
+      </fieldset>
+    </form>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

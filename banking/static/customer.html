@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Profile</title>
+    <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+{% if user.is_authenticated and user.customer %}
+    <div class="App">
+        <div class="Header">
+          <img src="logobanner.png" alt="Logo" class="Logo">
+          <div class="UserInfo">
+            <div class="username">
+              <img src="acc.png" alt="acc" class="icon"/>
+              <a href="customer.html">{{ user.customer.cust_name }}</a>
+            </div>
+            <div class="logoutopt">
+              <img src="logout.png" alt="logout" class="icon"/>
+              <a href="login.html">Log out</a>
+            </div>
+          </div>
+        </div>
+        <h2>Account PROFILE</h2>
+        <div class="sec1">
+        <table class="AccountInfo">
+          <tr>
+            <td>
+              <p class="col1">CUSTOMER ID</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ user.customer.cust_id }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">ACCOUNT HOLDER</p>
+            </td>
+            <td style="font-size: 25px; text-transform: uppercase;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ user.customer.cust_name }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">ACCOUNT ID</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ user.customer.acc_id }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">ACCOUNT TYPE</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-transform: uppercase;text-align: center;padding: 0;">
+              <p>{{ user.customer.acc_type }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">SAVINGS</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ user.customer.savings }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">ACCESS DATE</p>
+            </td>
+            <td style="font-size: 25px; font-style: italic;text-transform:uppercase;text-align: center;padding: 0;">
+              <p>{{ user.customer.access_date }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">OPENING DATE</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ user.customer.opening_date }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="col1">LOAN BALANCE</p>
+            </td>
+            <td style="font-size: 25px;font-style: italic;text-align: center;padding: 0;">
+              <p>{{ user.customer.loan_balance }}</p>
+            </td>
+          </tr>
+        </table>
+        <div class="line">
+            <h2> </h2>
+        </div>
+        <div class="innersec">
+            <ul>
+                <li>
+                    <h3>Transactions Record</h3>
+                    <button id="checkButton">Check now</button>
+                </li>
+                <li>
+                    <h3>Loan Service Available</h3>
+                    <button id="applyButton">Apply now</button>
+                </li>
+                <li>
+                    <h3>Support Us</h3>
+                    <button id="submitButton">Submit Feedback</button>
+                </li>
+            </ul>
+        </div>
+        </div>
+      </div>
+{% else %}
+    {% error %}
+{% endif %}
+</body>
+</html>

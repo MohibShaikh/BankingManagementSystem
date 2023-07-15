@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="emp.css">
+</head>
+<body>
+    <div class="App">
+    <div class="Header">
+        <img src="logobanner.png" alt="Logo" class="Logo">
+        <div class="UserInfo">
+          <div class="username">
+            <img src="acc.png" alt="acc" class="icon"/>
+            <p>{{John Doe}}</p>
+          </div>
+          <div class="logoutopt">
+            <img src="logout.png" alt="logout" class="icon"/>
+            <a href="login.html">Log out</a>
+          </div>
+        </div>
+      </div>
+  <header>
+    <h1>Bank Employee Portal</h1>
+  </header>
+
+  <section class="employee-section">
+    <div class="employee-details">
+      <h2>Employee Details</h2>
+      <p><strong>Name:</strong> {{ employee.staff_name }}</p>
+      <p><strong>Position:</strong> {{ employee.designation }}</p>
+    </div>
+    <div class="working-hours">
+      <h2>Working Hours</h2>
+      <p><strong>Start Time:</strong> {{ employee.start_time }}</p>
+      <p><strong>End Time:</strong> {{ employee.end_time }}</p>
+      <p><strong>Total Hours:</strong> {{ employee.total_hours }}</p>
+    </div>
+
+    <div class="clock">
+      <h2>Current Time</h2>
+      <p id="clock"></p>
+    </div>
+  </section>
+
+  <section class="transaction-section">
+    <h2>Transaction Form</h2>
+    <form id="transactionForm">
+      <div class="form-group">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" required>
+      </div>
+      <div class="form-group">
+        <label for="transactionType">Transaction Type:</label>
+        <select id="transactionType" required>
+          <option value="deposit">Deposit</option>
+          <option value="withdrawal">Withdrawal</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</div>
+
+  <script src="emp.js"></script>
+</body>
+</html>

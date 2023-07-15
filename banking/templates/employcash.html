@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="employcash.css">
+  <style>
+    /* Responsive CSS */
+    @media screen and (max-width: 768px) {
+      .App {
+        padding-top: 20px;
+      }
+      .Header {
+        flex-direction: column;
+        align-items: center;
+      }
+      .Logo {
+        width: 80%;
+        height: auto;
+        margin: 10px 0;
+      }
+      .UserInfo {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        gap: 10px;
+        font-size: 20px;
+      }
+      .username {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .logoutopt {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .AccountInfo {
+        width: 90%;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      .col1 {
+        font-size: 20px;
+      }
+      td {
+        padding-left: 10px;
+      }
+      p {
+        font-size: 20px;
+      }
+      .accfield {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="Header">
+      <img src="logobanner.png" alt="Logo" class="Logo">
+      <div class="UserInfo">
+        <div class="username">
+          <img src="acc.png" alt="acc" class="icon"/>
+          <p>John Doe</p>
+        </div>
+        <div class="logoutopt">
+          <img src="logout.png" alt="logout" class="icon"/>
+          <a href="login.html">Log out</a>
+        </div>
+      </div>
+    </div>
+  <div class="App">
+    <section class="employee-section">
+        <div class="employee-details">
+          <h2>Employee Details</h2>
+          <p><strong>Name:</strong> <span id="employeeName"></span></p>
+          <p><strong>Position:</strong> <span id="employeePosition"></span></p>
+        </div>
+        <div class="working-hours">
+          <h2>Working Hours</h2>
+          <p><strong>Start Time:</strong> <span id="startTime"></span></p>
+          <p><strong>End Time:</strong> <span id="endTime"></span></p>
+          <p><strong>Total Hours:</strong> <span id="totalHours"></span></p>
+        </div>
+        <div class="clock">
+          <h2>Current Time</h2>
+          <p id="clock"></p>
+        </div>
+      </section>
+      <form id="loginForm" action="POST">
+        <fieldset>
+          <h2>TRANSACTIONS</h2>
+          <div class="Field">
+            <select id="roleSelect">
+              <option value="role">Transaction Type</option>
+              <option value="client">Deposit</option>
+              <option value="employee">Withdrawal</option>
+            </select>
+          </div>
+          <div class="Field">
+            <label>Customer ID <sup>*</sup></label>
+            <input id="emailInput" type="text" placeholder="Email address"/>
+            <p id="emailError" class="FieldError"></p>
+          </div>
+          <div class="Field">
+            <label>Password <sup>*</sup></label>
+            <input id="passwordInput" type="password" placeholder="Password" />
+            <p id="passwordError" class="FieldError"></p>
+          </div>
+         
+          <button id="submitBtn" type="submit">Login</button>
+          <hr>
+        </fieldset>
+      </form>
+    
+  </div>
+  <script src="emp.js"></script>
+</body>
+</html>

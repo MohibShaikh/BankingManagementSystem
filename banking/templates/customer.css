@@ -1,0 +1,196 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: url(./wall2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: rgb(241, 242, 255);
+    position: sticky;
+    top: 0px;
+    border-bottom: 3px inset rgb(35, 41, 93);
+}
+.Logo {
+    width: 13cm;
+    height: 2cm;
+    margin-left: 0.75cm;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.UserInfo {
+    display: flex;
+    align-items: center;
+    margin-right: 0.75cm;
+    font-size: 25px;
+    text-transform: uppercase;
+    gap: 30px;
+}
+.username {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.icon {
+    height: 0.75cm;
+}
+p {
+    position: relative;
+    margin-bottom: 1px;
+    margin: auto;
+    display: inline-block;
+    font-size: 25px;
+    cursor: default;
+}
+.logoutopt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+}
+a {
+    margin-left: 10px;
+    font-weight: 700;
+    color: rgb(44, 52, 119);
+    text-decoration: none;
+}
+h2 {
+    align-self: center;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-family: Canadara;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-shadow: white 2px 2px 5px, rgb(126, 120, 120) 0px 0px 5px;
+    color: rgb(44, 52, 119);
+    text-decoration: underline;
+}
+.sec1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.AccountInfo {
+    justify-content: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    padding-left: 0px;
+    padding-top: 0px;
+    background-color: transparent;
+    width: 50%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr:nth-child(2n+1) {
+    background-color: rgba(76, 80, 141, 0.29);
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td {
+    height: 1.5cm;
+}
+.col1 {
+    align-self: center;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(44, 52, 119);
+    display: inline-block;
+    font-size: 25px;
+    margin-top: 0px;
+    padding-left: 20px;
+    cursor: default;
+}
+.line {
+    width: 2px;
+    background-color: rgb(44, 52, 119);
+    margin-left: 0.5cm;
+    margin-right: 0.5cm;
+    height: 12cm;
+}
+.innersec {
+    width: 40%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+    background-color: transparent;
+}
+li {
+    height: 3.5cm;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: rgb(35, 41, 93);
+    border-image: initial;
+    border-radius: 50px;
+    margin: 15px;
+}
+li:hover{
+    background-color:  rgba(76, 80, 141, 0.29);
+}
+h3 {
+    text-transform: uppercase;
+    font-size: 23px;
+    color: rgb(35, 41, 93);
+    cursor: default;
+}
+button {
+    width: 240px;
+    background-color: rgb(44, 52, 119);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 0px;
+    padding: 12px;
+    border-radius: 40px;
+}
+button:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+  }

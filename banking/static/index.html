@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="App">
+    <img src="logoo-removebg-preview.png" class="logo"/>
+    <form id="registrationForm" action="{% url 'register_customer' %}" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <h2>CREATE ACCOUNT</h2>
+        <div class="Field1">
+          <label>
+            First name <sup>*</sup>
+          </label>
+          <input name="cust_name" type="text" placeholder="First name" required style="width:25%; margin-Left:10px;" />
+          <label style="margin-Left:10px;">Last name <sup>*</sup></label>
+          <input name="cust_name" type="text" placeholder="Last name" required style="width:25%; margin-Left:10px;" />
+        </div>
+        <div class="Field1">
+          <label>Contact<sup>*</sup></label>
+          <input name="contact" type="text" placeholder="03XX-XXXXXXX" required style="width:25%; margin-Left:30px;" />
+          <p id="contacterror" class="FieldError"></p>
+          <label style="margin-left :10px;">NIC <sup>*</sup></label>
+          <input name="CNIC" type="text" placeholder="XXXXXXXXXXXXX" required style="width:25%; margin-Left:50px;" />
+          <p id="nicerror" class="FieldError" style="margin-left: 50%;"></p>
+        </div>
+        <div class="Field1">
+          <label>Birth Date<sup>*</sup></label>
+          <input name="dob" type="date" required style="width:25%; margin-Left:26px;" />
+          <label>Gender <sup>*</sup></label>
+          <select name="gender" required style="width:30%; margin-Left:25px;">
+            <option value="gender">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="Field">
+          <label>Email address <sup>*</sup></label>
+          <input name="email" required type="text" placeholder="Email address" />
+          <p id="emailerror" class="FieldError"></p>
+        </div>
+        <div class="Field">
+          <label>Password <sup>*</sup></label>
+          <input name="password" required type="password" placeholder="Password" />
+          <p id="passwordError" class="FieldError"></p>
+        </div>
+        <div class="Field">
+          <label>Role <sup>*</sup></label>
+          <select name="role" required>
+            <option value="role">Role</option>
+            <option value="Customer">Client</option>
+            <option value="Employee">Employee</option>
+            <option value="Manager">Manager</option>
+          </select>
+        </div>
+        <button id="submitBtn" type="submit" >Create account</button>
+        <hr/>
+        <p>
+          Already have an account
+          <a href="login.html">SIGN IN</a>
+        </p>
+      </fieldset>
+    </form>
+  </div>        
+
+  <script src="script.js"></script>
+</body>
+</html>

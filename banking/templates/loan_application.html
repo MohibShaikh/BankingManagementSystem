@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application</title>
+    <link rel="stylesheet" href="{% static 'loan_application.css' %}">
+</head>
+<body>
+    <div class="Header">
+        <img src="{% static 'logobanner.png' %}" alt="Logo" class="Logo">
+        <div class="UserInfo">
+            <div class="username">
+                <img src="{% static 'acc.png' %}" alt="acc" class="icon"/>
+                <a href="customer.html">{{customer.cust_name}}</a>
+            </div>
+            <div class="logoutopt">
+                <img src="{% static 'logout.png' %}" alt="logout" class="icon"/>
+                <a href="login.html">Log out</a>
+            </div>
+        </div>
+    </div>
+    <div class="App">
+        <form id="loanForm" action="post">
+            <fieldset>
+                <h2>Loan Application</h2>
+                <div class="Field">
+                    <div class="Field1">
+                        <label for="customerid">Customer ID</label>
+                        <input type="text" id="customerid" name="customerid" placeholder="Customer ID" required>
+                    </div>
+                    <div class="Field1">
+                        <label for="accountid">Account ID</label>
+                        <input type="text" id="accountid" name="accountid" placeholder="Account ID" required>
+                    </div>
+                    <div class="Field1">
+                        <label for="amount">Loan Amount</label>
+                        <input type="number" id="amount" name="amount" placeholder="Loan Amount" required>
+                    </div>
+                    <div class="Field1">
+                        <label for="guarantor">Guarantor</label>
+                        <input type="text" id="guarantor" name="guarantor" placeholder="Guarantor" required>
+                    </div>
+                    <div class="Field1">
+                        <label for="purpose">Purpose</label>
+                        <input type="text" id="purpose" required name="purpose" placeholder="Purpose">
+                    </div>
+                    <div class="Field1">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" name="duration" placeholder="Duration" required>
+                    </div>
+                </div>
+                <button id="submitBtn" type="submit">Submit Application</button>
+            </fieldset>
+        </form>
+    </div>
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+          <h3>Application Submitted</h3>
+          <table id="confirmationTable"></table>
+          <button id="okButton">OK</button>
+        </div>
+      </div>
+<!--    <script src="{% static 'loan_application.js' %}"></script>-->
+</body>
+</html>

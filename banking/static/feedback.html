@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEDBACK</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="Header">
+          <img src="logobanner.png" alt="Logo" class="Logo">
+          <div class="UserInfo">
+            <div class="username">
+              <img src="acc.png" alt="acc" class="icon"/>
+              <a href="customer.html">{{ user.customer.cust_name }}</a>
+            </div>
+            <div class="logoutopt">
+              <img src="logout.png" alt="logout" class="icon"/>
+              <a href="login.html">Log out</a>
+            </div>
+          </div>
+        </div>
+    <div class="App">
+        <form id="loginForm" action="feedback.js">
+            <fieldset>
+              <h2>FEEDBACK FORM</h2>
+              <div class="Field">
+                <div style="display: flex; justify-content: space-between;width: 500px;margin-bottom: 4px;">
+                    <label>RATINGS</label>
+                    <input type="range" min="0" max="10" style="width: 300px;">
+                </div>
+                <HR style="width: 8cm;">
+                <div style="display: flex; justify-content: space-between;width: 500px; margin-bottom: 15PX; margin-top: 10px;">
+                    <label>CONCERNS</label>
+                    <textarea name="concerns" placeholder="if Any"></textarea>
+                </div>
+                <div style="display: flex; justify-content: space-between;width: 500px;">
+                    <label>SUGGESTIONS</label>
+                    <textarea name="suggestions" placeholder="If Any"></textarea>
+                </div>
+              </div>
+              <button id="submitBtn" type="submit">SUBMIT</button>
+            </fieldset>
+          </form>
+    </div>
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content">
+        <h3>Application Submitted</h3>
+        <table id="confirmationTable"></table>
+        <button id="okButton">OK</button>
+      </div>
+    </div>
+    <script src="feedback.js"></script>
+</body>
+</html>

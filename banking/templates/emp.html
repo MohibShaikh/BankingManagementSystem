@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'emp.css' %}">
+</head>
+<body>
+    <div class="App">
+    <div class="Header">
+        <img src="{% static 'bms:logobanner.png' %}" alt="Logo" class="Logo"/>
+        <div class="UserInfo">
+          <div class="username">
+            <img src="{% static 'bms:acc.png' %}" alt="acc" class="icon"/>
+            <p>{{ empdata.staff }}</p>
+          </div>
+          <div class="logoutopt">
+            <img src="{% static 'bms:logout.png' %}" alt="logout" class="icon"/>
+            <a href="login.html">Log out</a>
+          </div>
+        </div>
+      </div>
+  <header>
+    <h1>Bank Employee Portal</h1>
+  </header>
+
+  <section class="employee-section">
+    <div class="employee-details">
+      <h2>Employee Details</h2>
+      <p><strong>Name:</strong> {{ empdata.staff }}</p>
+      <p><strong>Position:</strong> {{ empdata.dept_id }}</p>  <!-- Assuming dept_id is the department name -->
+    </div>
+    <div class="working-hours">
+      <h2>Working Hours</h2>
+      <p><strong>Start Time:</strong> {{ empdata.start_time }}</p>
+      <p><strong>End Time:</strong> {{ empdata.end_time }}</p>
+      <p><strong>Total Hours:</strong> {{ empdata.total_hours }}</p>
+    </div>
+
+    <div class="clock">
+      <h2>Current Time</h2>
+      <p id="clock"></p>
+    </div>
+  </section>
+
+  <section class="transaction-section">
+    <h2>Transaction Form</h2>
+    <form id="transactionForm" action="" method="POST">  <!-- Removed GET method and empty action -->
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="customerEmail">Customer Email:</label>
+        <input type="email" id="customerEmail" required>
+      </div>
+      <div class="form-group">
+        <label for="transactionType">Transaction Type:</label>
+        <select id="transactionType" required name="transac_type">
+          <option value="deposit">Deposit</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</div>
+
+<!-- <script src="{% static 'emp.js' %}"></script> -->
+</body>
+</html>
